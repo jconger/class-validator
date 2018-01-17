@@ -23,6 +23,7 @@
     "typescript-validator"
   ],
   "dependencies": {
+    "reflect-metadata": "^0.1.12",
     "validator": "9.2.0"
   },
   "devDependencies": {

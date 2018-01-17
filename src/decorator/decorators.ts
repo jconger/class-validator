@@ -1,11 +1,12 @@
-import {ValidationTypes} from "../validation/ValidationTypes";
-import {IsEmailOptions, IsFQDNOptions, IsURLOptions, IsCurrencyOptions, IsNumberOptions} from "../validation/ValidationTypeOptions";
-import {ValidationOptions} from "./ValidationOptions";
-import {ValidationMetadata} from "../metadata/ValidationMetadata";
-import {ValidationMetadataArgs} from "../metadata/ValidationMetadataArgs";
-import {ConstraintMetadata} from "../metadata/ConstraintMetadata";
-import {getFromContainer} from "../container";
-import {MetadataStorage} from "../metadata/MetadataStorage";
+import { ValidationTypes } from "../validation/ValidationTypes";
+import { IsEmailOptions, IsFQDNOptions, IsURLOptions, IsCurrencyOptions, IsNumberOptions } from "../validation/ValidationTypeOptions";
+import { ValidationOptions } from "./ValidationOptions";
+import { ValidationMetadata } from "../metadata/ValidationMetadata";
+import { ValidationMetadataArgs } from "../metadata/ValidationMetadataArgs";
+import { ConstraintMetadata } from "../metadata/ConstraintMetadata";
+import { getFromContainer } from "../container";
+import { MetadataStorage } from "../metadata/MetadataStorage";
+import "reflect-metadata";
 
 // -------------------------------------------------------------------------
 // System
@@ -15,7 +16,7 @@ import {MetadataStorage} from "../metadata/MetadataStorage";
  * Registers custom validator class.
  */
 export function ValidatorConstraint(options?: { name?: string, async?: boolean }) {
-    return function(target: Function) {
+    return function (target: Function) {
         const isAsync = options && options.async ? true : false;
         let name = options && options.name ? options.name : "";
         if (!name) {
@@ -34,8 +35,8 @@ export function ValidatorConstraint(options?: { name?: string, async?: boolean }
  */
 export function Validate(constraintClass: Function, validationOptions?: ValidationOptions): Function;
 export function Validate(constraintClass: Function, constraints?: any[], validationOptions?: ValidationOptions): Function;
-export function Validate(constraintClass: Function, constraintsOrValidationOptions?: any[]|ValidationOptions, maybeValidationOptions?: ValidationOptions): Function {
-    return function(object: Object, propertyName: string) {
+export function Validate(constraintClass: Function, constraintsOrValidationOptions?: any[] | ValidationOptions, maybeValidationOptions?: ValidationOptions): Function {
+    return function (object: Object, propertyName: string) {
         const args: ValidationMetadataArgs = {
             type: ValidationTypes.CUSTOM_VALIDATION,
             target: object.constructor,
@@ -94,6 +95,8 @@ export function IsDefined(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("custom:IsDefined", null, object);
+
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -738,7 +741,7 @@ export function IsHexadecimal(validationOptions?: ValidationOptions) {
 /**
  * Checks if the string is an IP (version 4 or 6).
  */
-export function IsIP(version?: "4"|"6", validationOptions?: ValidationOptions) {
+export function IsIP(version?: "4" | "6", validationOptions?: ValidationOptions) {
     return function (object: Object, propertyName: string) {
         const args: ValidationMetadataArgs = {
             type: ValidationTypes.IS_IP,
@@ -754,7 +757,7 @@ export function IsIP(version?: "4"|"6", validationOptions?: ValidationOptions) {
 /**
  * Checks if the string is an ISBN (version 10 or 13).
  */
-export function IsISBN(version?: "10"|"13", validationOptions?: ValidationOptions) {
+export function IsISBN(version?: "10" | "13", validationOptions?: ValidationOptions) {
     return function (object: Object, propertyName: string) {
         const args: ValidationMetadataArgs = {
             type: ValidationTypes.IS_ISBN,
@@ -908,7 +911,7 @@ export function IsUrl(options?: IsURLOptions, validationOptions?: ValidationOpti
 /**
  * Checks if the string is a UUID (version 3, 4 or 5).
  */
-export function IsUUID(version?: "3"|"4"|"5", validationOptions?: ValidationOptions) {
+export function IsUUID(version?: "3" | "4" | "5", validationOptions?: ValidationOptions) {
     return function (object: Object, propertyName: string) {
         const args: ValidationMetadataArgs = {
             type: ValidationTypes.IS_UUID,
@@ -989,7 +992,7 @@ export function MaxLength(max: number, validationOptions?: ValidationOptions) {
  */
 export function Matches(pattern: RegExp, validationOptions?: ValidationOptions): Function;
 export function Matches(pattern: RegExp, modifiers?: string, validationOptions?: ValidationOptions): Function;
-export function Matches(pattern: RegExp, modifiersOrAnnotationOptions?: string|ValidationOptions, validationOptions?: ValidationOptions): Function {
+export function Matches(pattern: RegExp, modifiersOrAnnotationOptions?: string | ValidationOptions, validationOptions?: ValidationOptions): Function {
     let modifiers: string;
     if (modifiersOrAnnotationOptions && modifiersOrAnnotationOptions instanceof Object && !validationOptions) {
         validationOptions = modifiersOrAnnotationOptions as ValidationOptions;
