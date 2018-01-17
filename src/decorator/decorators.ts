@@ -95,7 +95,7 @@ export function IsDefined(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
-        Reflect.defineMetadata("custom:IsDefined", null, object);
+        Reflect.defineMetadata("class-validator:IsDefined", null, object);
 
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
@@ -113,6 +113,7 @@ export function Equals(comparison: any, validationOptions?: ValidationOptions) {
             constraints: [comparison],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:Equals", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -129,6 +130,7 @@ export function NotEquals(comparison: any, validationOptions?: ValidationOptions
             constraints: [comparison],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:NotEquals", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -144,6 +146,7 @@ export function IsEmpty(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsEmpty", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -159,6 +162,7 @@ export function IsNotEmpty(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsNotEmpty", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -175,6 +179,7 @@ export function IsIn(values: any[], validationOptions?: ValidationOptions) {
             constraints: [values],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsIn", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -191,6 +196,7 @@ export function IsNotIn(values: any[], validationOptions?: ValidationOptions) {
             constraints: [values],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsNotIn", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -209,6 +215,7 @@ export function IsOptional(validationOptions?: ValidationOptions) {
             }],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsOptional", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -228,6 +235,7 @@ export function IsBoolean(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsBoolean", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -243,6 +251,7 @@ export function IsDate(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsDate", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -259,6 +268,7 @@ export function IsNumber(options: IsNumberOptions = {}, validationOptions?: Vali
             constraints: [options],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsNumber", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -274,6 +284,7 @@ export function IsInt(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsNumber", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -289,6 +300,7 @@ export function IsString(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsString", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -301,6 +313,7 @@ export function IsDateString(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsDateString", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -316,6 +329,7 @@ export function IsArray(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsArray", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -332,6 +346,7 @@ export function IsEnum(entity: Object, validationOptions?: ValidationOptions) {
             constraints: [entity],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsEnum", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -353,6 +368,7 @@ export function IsDivisibleBy(num: number, validationOptions?: ValidationOptions
             constraints: [num],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsDivisibleBy", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -368,6 +384,7 @@ export function IsPositive(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsPositive", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -383,6 +400,7 @@ export function IsNegative(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsNegative", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -398,6 +416,7 @@ export function Min(min: number, validationOptions?: ValidationOptions) {
             constraints: [min],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsNumber", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -414,6 +433,7 @@ export function Max(max: number, validationOptions?: ValidationOptions) {
             constraints: [max],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:Max", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -434,6 +454,7 @@ export function MinDate(date: Date, validationOptions?: ValidationOptions) {
             constraints: [date],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:MinDate", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -450,6 +471,7 @@ export function MaxDate(date: Date, validationOptions?: ValidationOptions) {
             constraints: [date],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:MaxDate", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -469,6 +491,7 @@ export function IsBooleanString(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsBooleanString", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -484,6 +507,7 @@ export function IsNumberString(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsNumberString", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -504,6 +528,7 @@ export function Contains(seed: string, validationOptions?: ValidationOptions) {
             constraints: [seed],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:Contains", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -520,6 +545,7 @@ export function NotContains(seed: string, validationOptions?: ValidationOptions)
             constraints: [seed],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:NotContains", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -535,6 +561,7 @@ export function IsAlpha(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsAlpha", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -550,6 +577,7 @@ export function IsAlphanumeric(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsNumber", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -565,6 +593,7 @@ export function IsAscii(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsAscii", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -580,6 +609,7 @@ export function IsBase64(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsBase64", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -596,6 +626,7 @@ export function IsByteLength(min: number, max?: number, validationOptions?: Vali
             constraints: [min, max],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsByteLength", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -611,6 +642,7 @@ export function IsCreditCard(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsCreditCard", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -627,6 +659,7 @@ export function IsCurrency(options?: IsCurrencyOptions, validationOptions?: Vali
             constraints: [options],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsCurrency", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -643,6 +676,7 @@ export function IsEmail(options?: IsEmailOptions, validationOptions?: Validation
             constraints: [options],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsEmail", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -659,6 +693,7 @@ export function IsFQDN(options?: IsFQDNOptions, validationOptions?: ValidationOp
             constraints: [options],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsFQDN", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -674,6 +709,7 @@ export function IsFullWidth(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsFullWidth", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -689,6 +725,7 @@ export function IsHalfWidth(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsHalfWidth", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -704,6 +741,7 @@ export function IsVariableWidth(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsVariableWidth", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -719,6 +757,7 @@ export function IsHexColor(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsHexColor", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -734,6 +773,7 @@ export function IsHexadecimal(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsHexadecimal", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -750,6 +790,7 @@ export function IsIP(version?: "4" | "6", validationOptions?: ValidationOptions)
             constraints: [version],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsIP", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -766,6 +807,7 @@ export function IsISBN(version?: "10" | "13", validationOptions?: ValidationOpti
             constraints: [version],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsNumber", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -781,6 +823,7 @@ export function IsISIN(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsISIN", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -796,6 +839,7 @@ export function IsISO8601(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsISO8601", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -811,6 +855,7 @@ export function IsJSON(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsJSON", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -826,6 +871,7 @@ export function IsLowercase(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsLowercase", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -843,6 +889,7 @@ export function IsMobilePhone(locale: string, validationOptions?: ValidationOpti
             constraints: [locale],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsMobilePhone", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -858,6 +905,7 @@ export function IsMongoId(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsMongoId", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -873,6 +921,7 @@ export function IsMultibyte(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsMultibyte", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -888,6 +937,7 @@ export function IsSurrogatePair(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsSurrogatePair", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -904,6 +954,7 @@ export function IsUrl(options?: IsURLOptions, validationOptions?: ValidationOpti
             constraints: [options],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsUrl", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -920,6 +971,7 @@ export function IsUUID(version?: "3" | "4" | "5", validationOptions?: Validation
             constraints: [version],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsUUID", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -935,6 +987,7 @@ export function IsUppercase(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsUppercase", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -951,6 +1004,7 @@ export function Length(min: number, max?: number, validationOptions?: Validation
             constraints: [min, max],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:Length", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -967,6 +1021,7 @@ export function MinLength(min: number, validationOptions?: ValidationOptions) {
             constraints: [min],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:MinLength", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -983,6 +1038,7 @@ export function MaxLength(max: number, validationOptions?: ValidationOptions) {
             constraints: [max],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:MaxLength", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -1008,6 +1064,7 @@ export function Matches(pattern: RegExp, modifiersOrAnnotationOptions?: string |
             constraints: [pattern, modifiers],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:Matches", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -1023,6 +1080,7 @@ export function IsMilitaryTime(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsMilitaryTime", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -1043,6 +1101,7 @@ export function ArrayContains(values: any[], validationOptions?: ValidationOptio
             constraints: [values],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:ArrayContains", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -1059,6 +1118,7 @@ export function ArrayNotContains(values: any[], validationOptions?: ValidationOp
             constraints: [values],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:ArrayNotContains", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -1074,6 +1134,7 @@ export function ArrayNotEmpty(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:ArrayNotEmpty", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -1090,6 +1151,7 @@ export function ArrayMinSize(min: number, validationOptions?: ValidationOptions)
             constraints: [min],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:ArrayMinSize", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -1106,6 +1168,7 @@ export function ArrayMaxSize(max: number, validationOptions?: ValidationOptions)
             constraints: [max],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:ArrayMaxSize", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -1121,6 +1184,7 @@ export function ArrayUnique(validationOptions?: ValidationOptions) {
             propertyName: propertyName,
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:ArrayUnique", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
@@ -1137,6 +1201,7 @@ export function IsInstance(targetType: new (...args: any[]) => any, validationOp
             constraints: [targetType],
             validationOptions: validationOptions
         };
+        Reflect.defineMetadata("class-validator:IsInstance", null, object);
         getFromContainer(MetadataStorage).addValidationMetadata(new ValidationMetadata(args));
     };
 }
