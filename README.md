@@ -1,18 +1,15 @@
-# class-validator
+# class-validator-with-metadata
 
-[![Build Status](https://travis-ci.org/typestack/class-validator.svg?branch=master)](https://travis-ci.org/typestack/class-validator)
-[![npm version](https://badge.fury.io/js/class-validator.svg)](https://badge.fury.io/js/class-validator)
-[![Join the chat at https://gitter.im/typestack/class-validator](https://badges.gitter.im/typestack/class-validator.svg)](https://gitter.im/typestack/class-validator?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Allows use of decorator and non-decorator based validation.
 Internally uses [validator.js][1] to perform validation.
-Class-validator works on both browser and node.js platforms.
+Class-validator-with-metadata works on both browser and node.js platforms.
 
 ## Installation
 
 Install module:
 
-`npm install class-validator --save`
+`npm install class-validator-with-metadata --save`
 
 #### Old versions of node.js/browser
 
